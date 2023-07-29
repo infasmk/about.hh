@@ -1,3 +1,72 @@
+/**
+ * Função tint
+ * "Mistura" a cor desejada com o branco em certa proporção (percentage).
+ **/
+@function tint($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+
+/// Variáveis de cores
+$bg-whatsapp: #4bc75a;
+$bg-telegram: #279fd3;
+
+.btn-social{
+  cursor: pointer;
+}
+
+.btn-social {
+  color: #fff;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  border-radius: 0.2em;
+  font-size: 16px;
+}
+
+.btn-social:hover {
+  color: #fff;
+  box-shadow: 0 3px 11px 0 rgba(0, 0, 0, 0.18),
+  0 4px 13px 0 rgba(0, 0, 0, 0.15);
+}
+
+/***Background dos botões***/
+.btn-facebook {
+  background-color: $bg-facebook;
+}
+
+.btn-whatsapp {
+  background-color: $bg-whatsapp;
+
+}
+
+.btn-telegram {
+  background: $bg-telegram;
+}
+
+.btn-whatsapp:hover {
+  background-color: tint($bg-whatsapp, 20%);
+}
+
+.btn-telegram:hover {
+  background-color: tint($bg-telegram, 20%);
+}
+
+/**
+ * Utilitários
+ */
+
+/// Botões arredondados
+.btn-round {
+  border-radius: 50%;
+}
+
+/// Botões com apenas ícones
+.btn-icon-only {
+  height: 45px;
+  width: 45px;
+  padding: 8px;
+  text-align: center;
+  line-height: 1.6;
+}
+
 @import url("https://fonts.googleapis.com/css?family=Quicksand:400,500,700&subset=latin-ext");
 html {
   position: relative;
